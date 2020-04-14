@@ -13,29 +13,48 @@
 }
 
 .consult .title{
-  height:25%;
+  height:2em;
   color:#94969b;
   font-size: 22px;
   margin-bottom:5%;
 }
 
 .consult .address{
-  height:15%;
+  display: flex;
+  height:4em;
   font-size: 16px;
   margin-bottom:5%;
+  align-items: center;
+
 }
+.address>.fas{
+  color:#8e9094;
+  padding-left: 5%;
+
+}
+
+.address>div{
+  padding-left: 5%;
+  width:85%;
+}
+
 
 .consult p{
   font-size: 16px;
-  margin-bottom: 0;
-
 }
 
 .consult .date{
-  height:65%;
+  height: 9em;
   margin-bottom:5%;
 }
 
 .consult .appointment{
-  height:35%;
+  height: 6em;
+  p{
+    margin-bottom: 0;
+  }
+  .tel{
+    text-align: center;
+    padding-top: 8%;
+  }
 }
