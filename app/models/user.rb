@@ -7,4 +7,7 @@ class User < ApplicationRecord
   validates :lastname, presence: true
   validates :firstname, presence: true
   validates :phonenumber, presence: true, uniqueness: true, length: { is: 10 }, numericality: { only_integer: true }
+
+  has_and_belongs_to_many :appointments
+
 end
