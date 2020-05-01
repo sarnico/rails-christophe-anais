@@ -1,14 +1,27 @@
 <div class="container">
 
-  <%= simple_form_for @appointment do |f| %>
-    <%= f.error_notification %>
-    <!-- en caché nom prénom téléphone du current user-->
-    <%= f.input :date, as: :date, html5: true, label: 'date ici' %>
-    <%= f.input :time, as: :time, html5: true, label: 'heure ici' %>
-    <%#= f.input :user_ids, as: :hidden %>
-    <%= f.button :submit, 'confirmer', class:"button" %>
-  <% end %>
+<p>Vérifier vos données: <br>
+  email : <%= current_user.email %> <br>
+  Nom: <%= current_user.lastname %> <br>
+  Prénom : <%= current_user.firstname%> <br>
+  Téléphone: <%= current_user.phonenumber %></p>
 
-<div id="calendar">  </div>
+  <%= date=nil  %>
+  <%= time=nil  %>
+
+
+<div id="calendar"
+data-user="<%= current_user.id%>"
+data-appointments="<%= @appointments.to_json %>"
+>  </div>
+ <%= simple_form_for @appointment do |f| %>
+          <%= f.error_notification %>
+           <%= f.input :date, as: :hidden %>
+           <div id="appointment_date" data-datevalue="<%= date.to_json %>"></div>
+
+      <%= f.button :submit, 'réserver!', class:"button" %>
+      <% end %>
+
+
 
 </div>
