@@ -15,7 +15,6 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.user_id = current_user.id
     if @appointment.save
-      raise
       redirect_to root_path
     else
       render :new

@@ -1,12 +1,10 @@
 <% if user_signed_in? %>
-    <%= link_to root_path do %>
+    <%= link_to home_path do %>
       <i class="fas fa-home"></i>
     <% end %>
 
-     <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-
     <%= link_to destroy_user_session_path, method: :delete do %>
-      <i class="fas fa-sign-out-alt"></i>
+      <i class="fas fa-sign-out-alt">Se déconnecter</i>
     <% end %>
 
 <% end %>

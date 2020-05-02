@@ -16,7 +16,7 @@
     <%= render "shared/navbar" %>
     <%= yield %>
 
-    <%#= stylesheet_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application' %> <!--c'est parce qu'elle était active que le CSS ne répondaist plus localement-->
 
 
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
