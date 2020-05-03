@@ -1,0 +1,10 @@
+mes rendez-vous:
+<ul>
+<% @appointments.each do |appointment|%>
+<li>
+<%= appointment.date %>
+<%= appointment.user.lastname %>
+</li>
+<%end %>
+</ul>
+

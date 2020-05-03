@@ -1,9 +1,17 @@
 .banner {
+  width: 100%;
   height:41em;
   background-size: cover;
   background-position: right 5% bottom 25%;
   padding: 150px 0;
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    background-position: right 47% bottom 100%;
+    padding: 140px 0;
+  }
 }
+
+
 
 .banner h1 {
   margin-left: 8%;
@@ -11,6 +19,23 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      margin-left: 7%;
+      margin-bottom: 9%;
+  }
+}
+
+.banner h1{
+  a{
+
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  }
+  a:hover{
+    color:#9dab9c;
+  }
 }
 
 .banner p {
@@ -19,4 +44,7 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    margin-left: 29%;
+  }
 }

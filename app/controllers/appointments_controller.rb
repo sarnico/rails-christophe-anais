@@ -1,6 +1,11 @@
 class AppointmentsController < ApplicationController
+  before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+
   def index
-    @appointments = Appointment.all
+   @appointments = Appointment.all
+
+   @my_appointments = Appointment.where(params[:user_id]==current_user.id)
+
   end
 
   def show
@@ -15,7 +20,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.user_id = current_user.id
     if @appointment.save
-      redirect_to root_path
+      redirect_to appointment_path(@appointment)
     else
       render :new
     end
@@ -32,8 +37,12 @@ class AppointmentsController < ApplicationController
 
   private
 
+  def set_appointment
+    @appointment = Appointment.find(params[:id])
+  end
+
   def appointment_params
-    params.require(:appointment).permit(:time,:date)
+    params.require(:appointment).permit(:date,:user_id)
   end
 
 end

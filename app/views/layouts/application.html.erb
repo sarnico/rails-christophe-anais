@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--c'est pour responsive avec bootstrap-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Dr Christophe A.</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%#= javascript_include_tag 'application' %>
 
   </head>
 
@@ -16,7 +16,7 @@
     <%= render "shared/navbar" %>
     <%= yield %>
 
-    <%= stylesheet_pack_tag 'application' %> <!--c'est parce qu'elle était active que le CSS ne répondaist plus localement-->
+        <%= stylesheet_pack_tag 'application' %> <!--c'est parce qu'elle était active que le CSS ne répondaist plus localement-->
 
 
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
