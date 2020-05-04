@@ -1,27 +1,42 @@
 <div class="container">
 
-<p>Vérifier vos données: <br>
-  email : <%= current_user.email %> <br>
-  Nom: <%= current_user.lastname %> <br>
-  Prénom : <%= current_user.firstname%> <br>
-  Téléphone: <%= current_user.phonenumber %></p>
 
-  <%= date=nil  %>
-  <%= time=nil  %>
+  <div class="personnalInfo">
+    <h4>Avant de prendre rendez-vous, merci de vérifier vos données personnelles:</h2>
+    <p> <br>
+      email : <%= current_user.email %> <br>
+      Nom: <%= current_user.lastname %> <br>
+      Prénom : <%= current_user.firstname%> <br>
+      Téléphone: <%= current_user.phonenumber %>
 
+    </p>
+    <%= link_to "Modifer ses données personnelles", "/users/:id/edit" %>
+  </div>
 
-<div id="calendar"
-data-user="<%= current_user.id%>"
-data-appointments="<%= @appointments.to_json %>"
->  </div>
- <%= simple_form_for @appointment do |f| %>
-          <%= f.error_notification %>
-           <%= f.input :date, as: :hidden %>
-           <div id="appointment_date" data-datevalue="<%= date.to_json %>"></div>
+  <div class="row justify-content-center calendarsection">
+    <div class="col-12 col-lg-4 avalaibledates">
+      <% @dates=[] %>
+      <%  @dates << Time.new(2020, 05, 06, 2, 2, 2, "+02:00") << Time.new(2020, 05, 13, 2, 2, 2, "+02:00") << Time.new(2020, 05, 20, 2, 2, 2, "+02:00") << Time.new(2020, 05, 27, 2, 2, 2, "+02:00")%>
+      <h4>Prochaines dates ayant des disponibilités :</p>
+      <ul>
+      <% @dates.each do |date|%>
+      <li><%= date.strftime("%d-%m-%Y") %></li>
+      <%end %>
+      </ul>
+    </div>
 
+    <div class="col-12 col-lg-8" id="calendar"
+    data-user="<%= current_user.id%>"
+    data-appointments="<%= @appointments.to_json %>"
+    >
+
+    <%= simple_form_for @appointment do |f| %>
+      <%= f.error_notification %>
+      <%= date=nil  %>
+      <%= f.input :date, as: :hidden %>
+      <div id="appointment_date" data-datevalue="<%= date.to_json %>"></div>
       <%= f.button :submit, 'réserver!', class:"button" %>
       <% end %>
-
-
-
+    </div>
+  </div>
 </div>

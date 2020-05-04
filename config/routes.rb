@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       root 'appointments#new', as: :authenticated_root
       get 'users/sign_out' => "devise/sessions#destroy"
       get 'home', to: 'pages#home', as: 'home'
+      resources :users
 
     end
   end
