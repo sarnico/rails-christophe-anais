@@ -9,6 +9,7 @@
 
 }
 .avalaibledates{
+  text-align: center;
   width:25%;
 
   ul{
@@ -16,7 +17,7 @@
   }
 
   li{
-    background-color:#83A697;
+    background-color:#b08266;
     opacity: 0.8;
     list-style: none;
     margin-bottom: 5%;
@@ -28,17 +29,22 @@
   }
 
     li:hover{
-    background-color:#83A697;
     opacity: 1;
-    list-style: none;
-    margin-bottom: 5%;
-    text-align:center;
-    border-radius: 5px;
-    padding: 5%;
-    font-size: 18px;
-    color:white;
+
   }
 }
 
 #calendar{
 }
+
+.inactif{
+  display: none;
+}
+
+
+.formCalendar{
+  width:100%;
+}
+
+
+

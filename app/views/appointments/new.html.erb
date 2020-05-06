@@ -25,17 +25,19 @@
       </ul>
     </div>
 
-    <div class="col-12 col-lg-8" id="calendar"
+    <div class="col-12 col-lg-8">
+      <div id="calendar"
     data-user="<%= current_user.id%>"
-    data-appointments="<%= @appointments.to_json %>"
-    >
+    data-appointmentsbooked="<%= @appointmentsbooked.to_json %>">
+    </div>
 
+    <div class="formCalendar inactif">
     <%= simple_form_for @appointment do |f| %>
       <%= f.error_notification %>
       <%= date=nil  %>
       <%= f.input :date, as: :hidden %>
       <div id="appointment_date" data-datevalue="<%= date.to_json %>"></div>
-      <%= f.button :submit, 'réserver!', class:"button" %>
+      <%= f.button :submit, 'réserver!', class:"button"%>
       <% end %>
     </div>
   </div>

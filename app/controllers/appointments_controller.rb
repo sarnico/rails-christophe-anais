@@ -2,9 +2,10 @@ class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   def index
-   @appointments = Appointment.all
 
-   @my_appointments = Appointment.where(params[:user_id]==current_user.id)
+    @appointments = Appointment.all
+
+    @my_appointments = Appointment.where(params[:user_id]==current_user.id)
 
   end
 
@@ -12,7 +13,12 @@ class AppointmentsController < ApplicationController
   end
 
   def new
+    @appointmentsbooked = Appointment.all.map {|e|
+      {start:e.date.strftime("%FT%T%:z"), end:(e.date + 30.minutes).strftime("%FT%T%:z"), color: '#94969b',title:"réservé"}
+    }
+
     @appointment = Appointment.new
+
   end
 
   def create
@@ -36,7 +42,7 @@ class AppointmentsController < ApplicationController
 
   def destroy
     @appointment.destroy
-    redirect_to restaurants_path
+    redirect_to root_path
   end
 
   private

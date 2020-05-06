@@ -1,25 +1,33 @@
 <div class="container appointmentlist">
   <h3>Mes rendez-vous:</h3>
-  <ul>
-    <% @appointments.each do |appointment|%>
-    <li>
-      <% @app = appointment %>
-      <%= "rendez-vous le #{@app.date.strftime("%d/%m/%Y")} à #{@app.date.strftime("%Hh%M")}" %>
-      <%= link_to "edit",edit_appointment_path(appointment) %>
 
-      <%#= link_to appointment_path(appointment), method: :delete, data: { confirm: "Are you sure?" } do %>
-      <!-- <i class="icon fas fa-trash-alt"></i> -->
-      <%# end %>
-      <%= link_to "Delete", app_destroy_path(appointment), method: :delete,
-      data: { confirm: "Are you sure?" } %>
+  <% if @appointments == [] %>
+    <p>Vous n'avez pas de rendez-vous à venir.</p>
+    <%= link_to "Pour prendre un rendez-vous", root_path  %>
 
-      <%= link_to app_destroy_path(appointment), method: :delete, data: { confirm: "Are you sure?" } do %>
-      <i class="icon fas fa-trash-alt"></i>
-      <% end %>
+  <% else %>
 
 
-    </li>
+    <ul>
+      <% @appointments.each do |appointment|%>
+      <li>
+        <% @app = appointment %>
+        <%= "rendez-vous le #{@app.date.strftime("%d/%m/%Y")} à #{@app.date.strftime("%Hh%M")}" %>
+
+        <%= link_to edit_appointment_path(appointment) do %>
+        <i class="fas fa-edit"></i>
+        <% end %>
+
+        <%= link_to appointment_path(appointment), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="icon fas fa-trash-alt"></i>
+        <% end %>
+      </li>
+      <%end %>
+    </ul>
+
     <%end %>
-  </ul>
+
+
+
 </div>
 
