@@ -1,7 +1,7 @@
 <div class="container appointmentlist">
   <h3>Mes rendez-vous:</h3>
 
-  <% if @appointments == [] %>
+  <% if @my_appointments == [] %>
     <p>Vous n'avez pas de rendez-vous à venir.</p>
     <%= link_to "Pour prendre un rendez-vous", root_path  %>
 
@@ -9,10 +9,12 @@
 
 
     <ul>
-      <% @appointments.each do |appointment|%>
+      <% @my_appointments.each do |appointment|%>
       <li>
-        <% @app = appointment %>
-        <%= "rendez-vous le #{@app.date.strftime("%d/%m/%Y")} à #{@app.date.strftime("%Hh%M")}" %>
+
+
+        <%= "#{User.find(id=appointment.user_id).lastname}" %>
+        <%= "rendez-vous le #{appointment.date.strftime("%d/%m/%Y")} à #{appointment.date.strftime("%Hh%M")}" %>
 
         <%= link_to edit_appointment_path(appointment) do %>
         <i class="fas fa-edit"></i>
