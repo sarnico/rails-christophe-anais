@@ -1,0 +1,6 @@
+const createAppointment = () =>{
+
+
+}
+
+export { createAppointment }

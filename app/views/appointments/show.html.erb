@@ -1,13 +1,32 @@
 <div class="container">
-ici show appointment
-<br>
-
-<%= "date rendez-vous: #{@appointment.date}" %> <br>
-<%= "nom rendez-vous: #{@appointment.user.lastname}" %> <br>
-<%= "prénom rendez-vous: #{@appointment.user.firstname}" %> <br>
-<%= "téléphone rendez-vous: #{@appointment.user.phonenumber}" %> <br>
 
 
-un truc récapitulatif sur annulation ???
+    Récapitulatif de votre rendez-vous à venir:
+
+    <br>
+
+    <%= "Date : #{@appointment.date.strftime("%d/%m/%Y")}" %> <br>
+    <%= "Heure : #{@appointment.date.strftime("%H:%M")}" %> <br>
+    <%= "Nom du patient: #{@appointment.user.lastname}" %> <br>
+    <%= "Prénom du patient: #{@appointment.user.firstname}" %> <br>
+    <%= "Téléphone: #{@appointment.user.phonenumber}" %> <br>
+
+    <br>
+    <br>
+    <br>
+
+    En cas de besoin, il est vous est possible de mofidier ou d'annuler jusqu'à 48h à l'avance. Le récapitulatif de vos rendez-vous est disponible sous l'onglet "Mes rendez-vous"
+
+    <br>
+
+    En cas d'oubli de rendez-vous, le médecin se réserve le droit de facturer ? C'est quoi la règle ????
+
+
+    Récapitulatif de votre rendez-vous à venir:
+
+
+
 
 </div>
+
+

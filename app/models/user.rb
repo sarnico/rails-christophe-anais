@@ -4,9 +4,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :lastname, presence: true
-  validates :firstname, presence: true
-  validates :phonenumber, presence: true, uniqueness: true, length: { is: 10 }, numericality: { only_integer: true }
+  #validates :lastname, presence: true
+  #validates :firstname, presence: true
+  #validates :phonenumber, presence: true
+  validates :email, uniqueness: true
+
+  validates_presence_of :lastname
+validates_presence_of :firstname
+validates_presence_of :phonenumber
+validates_presence_of :email
+
+
 
   has_and_belongs_to_many :appointments
 

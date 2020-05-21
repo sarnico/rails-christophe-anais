@@ -4,12 +4,28 @@ import '@fullcalendar/core/main.css';
 import '@fullcalendar/timegrid/main.css';
 import '@fullcalendar/list/main.css';
 
+
+
 import { Calendar } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import momentPlugin from '@fullcalendar/moment';
 import moment from 'moment';
 import listPlugin from '@fullcalendar/list';
+
+  const doubleform=document.querySelector(".doubleform_validation")
+
+
+  doubleform.addEventListener('click', event => {
+    const userform=document.querySelector("#new_user")
+    const appointmentform=document.querySelector("#new_appointment")
+    event.preventDefault()
+    console.log("hello")
+    userform.submit()
+    console.log("HI")
+    // appointmentform.submit();
+  })
+
 
 
 const calendar = (selecteddate) => {
@@ -22,14 +38,12 @@ const calendar = (selecteddate) => {
   const user_id = calendarEl.dataset.user
 
   const appointmentsbooked = JSON.parse(calendarEl.dataset.appointmentsbooked)
-  console.log(appointmentsbooked)
-
 
   var calendar = new Calendar(calendarEl, {
     plugins: [ interactionPlugin, timeGridPlugin, momentPlugin, listPlugin ],
     defaultDate: selecteddate,
     defaultView: 'timeGridDay',
-     timeZone: 'Europe/Brussels',
+    timeZone: 'Europe/Brussels',
     contentHeight: 600,
     allDaySlot: false,
     selectable: true,

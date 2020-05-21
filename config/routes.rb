@@ -6,11 +6,12 @@ devise_for :users
     authenticated :user do
       root 'appointments#new', as: :authenticated_root
       resources :appointments
-      get 'users/sign_out' => "devise/sessions#destroy"
-      get 'home', to: 'pages#home', as: 'home'
-      resources :users
+      resources :users, only: [:new]
+      post 'create_user', to: "users#create"
 
     end
+    get 'users/sign_out' => "devise/sessions#destroy"
+    get 'home', to: 'pages#home', as: 'home'
   end
 
 
