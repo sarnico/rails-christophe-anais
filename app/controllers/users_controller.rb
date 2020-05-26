@@ -11,6 +11,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.password = "123456"
     @user.password_confirmation = "123456"
+
+    if @user.save
+      respond_to do |format|
+        format.json { render json: @user.as_json }
+      end
+    end
+    #   @appointment = Appointment.new(user_id: @user.id)
+
   end
 
   def edit

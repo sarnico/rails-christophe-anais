@@ -18,20 +18,26 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
+
 
     if current_user.email != "anais_christophe@hotmail.com"
         @appointment.user_id = current_user.id
+
     elsif current_user.email == "anais_christophe@hotmail.com"
-        @appointment.user_id = User.last.id
+      @appointment = Appointment.new(appointment_params)
+      if @appointment.save
+        respond_to do |format|
+          format.json { render json: @appointment.as_json }
+        end
+      end
     end
 
 
-    if @appointment.save
-      redirect_to appointment_path(@appointment)
-    else
-      render :new
-      end
+  #   if @appointment.save
+  #     redirect_to appointment_path(@appointment)
+  #   else
+  #     render :new
+  #     end
   end
 
   def edit
