@@ -31,13 +31,6 @@ class AppointmentsController < ApplicationController
         end
       end
     end
-
-
-  #   if @appointment.save
-  #     redirect_to appointment_path(@appointment)
-  #   else
-  #     render :new
-  #     end
   end
 
   def edit

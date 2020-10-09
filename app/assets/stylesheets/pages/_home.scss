@@ -1,31 +1,35 @@
 // Specific CSS for your home-page
 
 .container.consult{
-  margin-top:2%;
+  margin-top:5%;
 }
 
 .card.consult{
-  padding:5%;
+  // padding:5%;
   margin-bottom: 5%;
 }
 
 
 .consult h2{
-  margin-bottom:2%;
-  color: #4B4B4C;
+  margin-bottom:4%;
+  color: #848181;
 }
 
 .consult .title{
-  height:2em;
-  color:#94969b;
-  font-size: 22px;
+  padding-top:5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  background-color:#9d515f;
+  // height:2em;
+  // color:#9d515f;
+  color:white;
+  font-size: 20px;
   margin-bottom:5%;
 }
 
 .consult .address{
   display: flex;
   justify-content: space-between;
-  height:4em;
   font-size: 16px;
   margin-bottom:5%;
 }
@@ -36,23 +40,24 @@
 
 .address .fas{
   margin: 5% auto;
-  color: #94969b;
+  color: #9d515f;
 }
 
 .consult p{
   font-size: 16px;
   margin-bottom: 0;
+  padding-left: 5%;
 
 }
 
 .consult .date{
   font-size:16px;
   display:flex;
-  height:9em;
+  height:6em;
   margin-bottom:5%;
   .center{
     align-items:center;
-    padding-left: 5%;
+    margin-left: 5%;
     padding-right: 5%;
   }
 }
@@ -60,4 +65,11 @@
 
 .consult .appointment{
   height:6em;
+}
+
+.tel{
+  padding-top:7%;
+ text-align: center;
+  color: #9d515f;
+  font-weight:bolder;
 }

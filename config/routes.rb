@@ -8,7 +8,7 @@ devise_for :users
       resources :appointments
       resources :users, only: [:new]
       post 'create_user', to: "users#create"
-
+      resources :dates
     end
     get 'users/sign_out' => "devise/sessions#destroy"
     get 'home', to: 'pages#home', as: 'home'

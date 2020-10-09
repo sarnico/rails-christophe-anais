@@ -1,7 +1,7 @@
 <div class="container">
 
   <% if current_user.email == "anais_christophe@hotmail.com" %>
-    <div class="container">
+    <div class="container" id="create-appointment">
       <%= simple_form_for(@user, as: :user, method: :post, url: create_user_path) do |f| %>
         <%= f.error_notification %>
         <%= f.input :email, placeholder: 'email patient'  %>
@@ -34,7 +34,7 @@
   <div class="row justify-content-center calendarsection">
     <div class="col-12 col-lg-4 avalaibledates">
       <% @dates=[] %>
-      <%  @dates << Time.new(2020, 05, 25, 2, 2, 2, "+02:00") << Time.new(2020, 05, 27, 2, 2, 2, "+02:00") << Time.new(2020, 05, 29, 2, 2, 2, "+02:00")%>
+      <%  @dates << Time.new(2020, 06, 05, 2, 2, 2, "+02:00") << Time.new(2020, 06, 07, 2, 2, 2, "+02:00") << Time.new(2020, 06, 10, 2, 2, 2, "+02:00")%>
       <h4>Prochaines dates ayant des disponibilités :</h4>
       <ul>
       <% @dates.each do |date|%>

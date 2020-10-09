@@ -1,52 +1,83 @@
+
 .banner {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
-                  url("https://images.unsplash.com/photo-1508387104394-d13e1b497f85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1373&q=80");
+  url("https://images.unsplash.com/4/feet.JPG?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80");
   width: 100%;
-  height:41em;
   background-size: cover;
-  background-position: right 5% bottom 25%;
-  padding: 150px 0;
-
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    background-position: right 47% bottom 100%;
-    padding: 140px 0;
+  @media only screen and (max-width: 560px) {
+    height: 28em;
+    background-position: right 5% bottom 86%;
+  }
+  @media only screen and (min-device-width: 560px){
+    height: 100vh;
+    background-position: right 0% bottom 68%;
   }
 }
+
+// .banner {
+//   // background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
+//   //                 url("https://images.unsplash.com/photo-1508387104394-d13e1b497f85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1373&q=80");
+//   // background-position: right 5% bottom 25%;
+//   // height:41em;
+//   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
+//                   url("https://images.unsplash.com/4/feet.JPG?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80");
+//   width: 100%;
+//   height:85em;
+//   background-size: cover;
+
+//   background-position: right 5% bottom 50%;
+//   padding: 150px 0;
+
+
+//   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+//     background-position: right 47% bottom 100%;
+//     padding: 140px 0;
+//   }
+// }
 
 
 
 .banner h1 {
   margin-left: 15.5%;
-  color: white;
+  color: #9d515f;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 35px;
   font-weight: bold;
-    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  // @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    @media only screen and (max-width: 560px){
+      padding-top:15%;
       margin-left: 7%;
       margin-bottom: 9%;
+    }
+    @media only screen and (min-width: 560px){
+      padding-top: 7%;
+      margin-left: 18%;
+      margin-bottom: 3%;
+    }
   }
-}
 
-.banner h1{
-  a{
+  .banner h1{
+    a{
 
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      font-size: 32px;
+      font-weight: bold;
+    }
+    a:hover{
+      color:#9dab9c;
+    }
   }
-  a:hover{
-    color:#9dab9c;
-  }
-}
 
-.banner p {
-  margin-left: 15.5%;
-  font-size: 22px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    margin-left: 29%;
+  .banner p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    @media only screen and (max-width: 560px){
+      margin-left: 11%;
+    }
+    @media only screen and (min-width: 560px){
+      margin-left: 22%;
+    }
   }
-}

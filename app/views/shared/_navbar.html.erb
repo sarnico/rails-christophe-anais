@@ -19,6 +19,12 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
+        <% if current_user.email == "anais_christophe@hotmail.com" %>
+          <li class="nav-item">
+          <%= link_to "Dates", dates_path, class: "nav-link login_hover #{controller.controller_name == "dates" ? "active_nav" : "nothing"}"  %>
+          <% end %>
+      </li>
+
        <li class="nav-item">
         <%= link_to "Mes rendez-vous", appointments_path, class: "nav-link login_hover #{controller.controller_name == "appointments" ? "active_nav" : "nothing"}"  %>
 
