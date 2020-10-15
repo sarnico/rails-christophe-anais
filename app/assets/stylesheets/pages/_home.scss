@@ -38,9 +38,14 @@
   width: 85%;
 }
 
-.address .fas{
+.address{
+  .fas{
   margin: 5% auto;
   color: #9d515f;
+  }
+  a{
+    color: black;
+  }
 }
 
 .consult p{
