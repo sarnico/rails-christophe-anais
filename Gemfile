@@ -6,7 +6,8 @@ ruby '2.6.5'
 # Add by the Dream Team
 gem 'devise'
 gem 'faker'
-gem "pundit"
+gem 'pundit'
+gem 'meta-tags', '~> 2.1'
 
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
