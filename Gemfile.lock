@@ -234,7 +234,6 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
-  x64-mingw-ucrt
 
 DEPENDENCIES
   autoprefixer-rails
