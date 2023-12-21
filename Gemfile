@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.3.2'
+ruby '3.2.2'
 
 # Add by the Dream Team
 gem 'devise'
@@ -11,9 +11,9 @@ gem 'meta-tags', '~> 2.1'
 
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
-gem 'pg', '~> 0.21'
+gem 'pg', '~> 1.5'
 gem 'puma'
-gem 'rails', '5.2.4.1'
+gem 'rails', '6.1.3.1'
 gem 'redis'
 
 gem 'autoprefixer-rails'
@@ -69,7 +69,7 @@ end
 # # gem 'bcrypt', '~> 3.1.7'
 
 # # Use ActiveStorage variant
-# # gem 'mini_magick', '~> 4.8'
+##gem 'mimemagic', '~> 0.3.1'
 
 # # Use Capistrano for deployment
 # # gem 'capistrano-rails', group: :development
