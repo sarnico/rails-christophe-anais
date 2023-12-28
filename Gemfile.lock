@@ -110,13 +110,14 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
-    meta-tags (2.19.0)
-      actionpack (>= 3.2.0, < 7.2)
+    meta-tags (2.20.0)
+      actionpack (>= 6.0.0, < 7.2)
     method_source (1.0.0)
     mini_mime (1.0.3)
+    mini_portile2 (2.8.5)
     minitest (5.20.0)
     msgpack (1.7.2)
-    net-imap (0.4.8)
+    net-imap (0.4.9)
       date
       net-protocol
     net-pop (0.1.2)
@@ -126,11 +127,12 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.7.0)
-    nokogiri (1.15.5)
+    nokogiri (1.16.0)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.15.5-x64-mingw-ucrt)
+    nokogiri (1.16.0-x64-mingw-ucrt)
       racc (~> 1.4)
-    nokogiri (1.15.5-x86_64-linux)
+    nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.5.4)
