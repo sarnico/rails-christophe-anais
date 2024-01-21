@@ -13,7 +13,9 @@ module RailsChristopheAnais
       generate.test_framework :test_unit, fixture: false
     end
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults 7.0
+
+    config.active_support.cache_format_version = 6.1
 
 
     # Settings in config/environments/* take precedence over those specified here.
