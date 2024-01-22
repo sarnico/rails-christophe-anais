@@ -1,25 +1,22 @@
 {
-  "name": "rails-christophe-anais",
+  "name": "rails-anais-christophe",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.15.1",
   "description": "Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.",
-  "main": "babel.config.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sarnico/rails-christophe-anais.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
+    "build:css": "yarn build:css:compile && yarn build:css:prefix",
+    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sarnico/rails-christophe-anais/issues"
-  },
-  "homepage": "https://github.com/sarnico/rails-christophe-anais#readme"
+  "browserslist": [
+    "defaults"
+  ]
 }

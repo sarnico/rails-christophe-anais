@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 ruby "3.1.2"
-
+gem 'meta-tags'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3"
@@ -45,11 +45,16 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem "bootstrap", "~> 5.2"
+gem "bootstrap", "~> 5.2.2"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
+
+gem "sprockets-rails" #ajouté par moi 20240122
+
+#gem "cssbundling-rails" #ajouté par moi 20240122
+
 
 group :development, :test do
   gem "dotenv-rails"
